@@ -2,6 +2,11 @@ package BrowserControl;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.sql.Driver;
 
 public class CucumberHooks extends WebConnector{
 
@@ -11,7 +16,17 @@ public class CucumberHooks extends WebConnector{
 }
 
 @After
- public void teardown(){
+ public void teardown(Scenario scenario){
+  if (scenario.isFailed()){
+  //Take a screenshot
+  final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+  //embed it in the report
+ scenario.attach(screenshot, "image/png", scenario.getName().replace("","")+ "-ErrorsScreenshot");
+  }
+
+
+
+
     closeBrowser();
 
 }
