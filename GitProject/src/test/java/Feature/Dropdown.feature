@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @SmokeTest
 Feature: Verify Dropdown box
   As a user of the system
