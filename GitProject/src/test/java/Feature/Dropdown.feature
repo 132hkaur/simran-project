@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @SmokeTest
 Feature: Verify Dropdown box
   As a user of the system
@@ -30,3 +31,6 @@ Scenario: 2. Verify that the user can select an option from the dropdown box
     | Name (Z to A)       |
     | Price (low to high) |
     | price (high to low) |
+
+
+
